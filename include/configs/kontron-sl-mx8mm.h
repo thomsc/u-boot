@@ -45,6 +45,7 @@
 #define BOOT_TARGET_DEVICES(func) \
 	func(MMC, mmc, 1) \
 	func(MMC, mmc, 0) \
+	func(USB, usb, 0) \
 	func(PXE, pxe, na)
 #include <config_distro_bootcmd.h>
 /* Do not try to probe USB net adapters for net boot */
