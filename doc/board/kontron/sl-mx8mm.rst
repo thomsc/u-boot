@@ -43,7 +43,7 @@ There are two sources for the TF-A. Mainline and NXP. Get the one you prefer
 
   .. code-block:: bash
 
-     $ make PLAT=imx8mm IMX_BOOT_UART_BASE="0x30880000" bl31
+     $ make PLAT=imx8mm CROSS_COMPILE=aarch64-linux-gnu- IMX_BOOT_UART_BASE="0x30880000" bl31
      $ cp build/imx8mm/release/bl31.bin $(builddir)
 
 Get the DDR firmware
@@ -53,7 +53,7 @@ Get the DDR firmware
 
    $ wget https://www.nxp.com/lgfiles/NMG/MAD/YOCTO/firmware-imx-8.9.bin
    $ chmod +x firmware-imx-8.9.bin
-   $ ./firmware-imx-8.9
+   $ ./firmware-imx-8.9.bin
    $ cp firmware-imx-8.9/firmware/ddr/synopsys/lpddr4*.bin $(builddir)
 
 Build U-Boot
