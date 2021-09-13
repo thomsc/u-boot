@@ -155,6 +155,7 @@
 
 &usdhc1 {
 	mmc-hs400-1_8v;
+	/delete-property/ vqmmc-supply;
 };
 
 &usdhc2 {
