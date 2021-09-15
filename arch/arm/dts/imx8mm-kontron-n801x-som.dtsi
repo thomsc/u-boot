@@ -86,18 +86,15 @@
 		pinctrl-0 = <&pinctrl_pmic>;
 		interrupt-parent = <&gpio1>;
 		interrupts = <0 IRQ_TYPE_LEVEL_LOW>;
-		sd-vsel-gpios = <&gpio1 4 GPIO_ACTIVE_HIGH>;
 
 		regulators {
 			reg_vdd_soc: BUCK1 {
 				regulator-name = "buck1";
 				regulator-min-microvolt = <800000>;
-				regulator-max-microvolt = <850000>;
+				regulator-max-microvolt = <900000>;
 				regulator-boot-on;
 				regulator-always-on;
 				regulator-ramp-delay = <3125>;
-				nxp,dvs-run-voltage = <850000>;
-				nxp,dvs-standby-voltage = <800000>;
 			};
 
 			reg_vdd_arm: BUCK2 {
@@ -113,7 +110,7 @@
 			reg_vdd_dram: BUCK3 {
 				regulator-name = "buck3";
 				regulator-min-microvolt = <850000>;
-				regulator-max-microvolt = <950000>;
+				regulator-max-microvolt = <900000>;
 				regulator-boot-on;
 				regulator-always-on;
 			};
@@ -152,8 +149,8 @@
 
 			reg_vdd_snvs: LDO2 {
 				regulator-name = "ldo2";
-				regulator-min-microvolt = <800000>;
-				regulator-max-microvolt = <800000>;
+				regulator-min-microvolt = <850000>;
+				regulator-max-microvolt = <900000>;
 				regulator-boot-on;
 				regulator-always-on;
 			};
@@ -228,7 +225,6 @@
 	pinctrl_pmic: pmicgrp {
 		fsl,pins = <
 			MX8MM_IOMUXC_GPIO1_IO00_GPIO1_IO0		0x141
-			MX8MM_IOMUXC_GPIO1_IO04_GPIO1_IO4		0x141
 		>;
 	};
 
