@@ -74,10 +74,11 @@
 #define FEC_QUIRK_ENET_MAC
 
 #define CONFIG_EXTRA_ENV_SETTINGS \
-	"kernel_addr_r=0x42000000\0" \
+	"scriptaddr=" __stringify(CONFIG_LOADADDR) "\0" \
+	"kernel_addr_r=" __stringify(CONFIG_LOADADDR) "\0" \
 	"ramdisk_addr_r=0x46400000\0" \
+	"fdt_addr_r=0x43000000\0" \
 	"pxefile_addr_r=0x46000000\0" \
-	"scriptaddr=0x46000000\0" \
 	"bootdelay=3\0" \
 	"hostname=" CONFIG_HOSTNAME "\0" \
 	BOOTENV
