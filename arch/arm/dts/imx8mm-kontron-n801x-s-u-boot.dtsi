@@ -247,4 +247,38 @@
 			filename = "u-boot.itb";
 		};
 	};
+
+	spi-flash-image {
+		filename = "spi-flash.bin";
+		pad-byte = <0xff>;
+
+		blob {
+			offset = <0x400>;
+			filename = "flash.bin";
+		};
+	};
+
+	u-boot-update {
+		filename = "firmware-update.itb";
+
+		fit {
+			description = "Configuration for firmware update file";
+
+			images {
+				flash-bin {
+					description = "U-Boot SPI flash image";
+					type = "firmware";
+					os = "u-boot";
+					arch = "arm";
+					compress = "none";
+					load = <0>; /* unused */
+
+					blob {
+						filename = "spi-flash.bin";
+					};
+
+				};
+			};
+		};
+	};
 };
