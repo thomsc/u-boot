@@ -78,6 +78,7 @@
 	"kernel_addr_r=" __stringify(CONFIG_LOADADDR) "\0" \
 	"ramdisk_addr_r=0x46400000\0" \
 	"fdt_addr_r=0x43000000\0" \
+	"dfu_alt_info=sf 0:0=flash-bin raw 0 0x1e0000\0" \
 	"pxefile_addr_r=0x46000000\0" \
 	"bootdelay=3\0" \
 	"hostname=" CONFIG_HOSTNAME "\0" \
