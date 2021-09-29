@@ -79,7 +79,7 @@
 	"ramdisk_addr_r=0x46400000\0" \
 	"pxefile_addr_r=0x46000000\0" \
 	"scriptaddr=0x46000000\0" \
-	"dfu_alt_info=sf 0:0=flash-bin raw 0x400 0x1f0000\0" \
+	"dfu_alt_info=sf 0:0=flash-bin raw 0 0x1f0000\0" \
 	"bootdelay=3\0" \
 	"hostname=" CONFIG_HOSTNAME "\0" \
 	BOOTENV
