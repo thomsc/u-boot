@@ -119,8 +119,23 @@
 	u-boot,dm-pre-reloc;
 };
 
+&usbotg1 {
+	/* this is just for backward compatibity */
+	fsl,usbphy = <&usbphynop1>;
+};
+
+&usbotg2 {
+	/* this is just for backward compatibity */
+	fsl,usbphy = <&usbphynop2>;
+};
+
 &usdhc1 {
 	u-boot,dm-spl;
+	/* The supply from the eMMC cannot be changed. Since e.g. Debian
+	   in version 11 does not have the module for the Rugulator PC9450,
+	   the eMMC driver cannot be tested, because there is a dependency. */
+	/delete-property/ vmmc-supply;
+	/delete-property/ vqmmc-supply;
 };
 
 &usdhc2 {
