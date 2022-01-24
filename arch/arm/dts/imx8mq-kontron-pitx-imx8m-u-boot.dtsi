@@ -2,11 +2,150 @@
 
 #include "imx8mq-u-boot.dtsi"
 
+/ {
+	soc@0 {
+		u-boot,dm-spl;
+
+		bus@30000000 {
+			u-boot,dm-spl;
+		};
+
+		bus@30400000 {
+			u-boot,dm-spl;
+		};
+
+		bus@30800000 {
+			u-boot,dm-spl;
+		};
+	};
+};
+
+&clk {
+	u-boot,dm-spl;
+};
+&ckil {
+	u-boot,dm-spl;
+};
+&osc_25m {
+	u-boot,dm-spl;
+};
+&osc_27m {
+	u-boot,dm-spl;
+};
+&clk_ext1 {
+	u-boot,dm-spl;
+};
+&clk_ext2 {
+	u-boot,dm-spl;
+};
+&clk_ext3 {
+	u-boot,dm-spl;
+};
+&clk_ext4 {
+	u-boot,dm-spl;
+};
+
+//&</soc@0/bus@30000000> {
+//	u-boot,dm-spl;
+//};
+//
+//&</soc@0/bus@30400000> {
+//	u-boot,dm-spl;
+//};
+
+&i2c1 {
+	u-boot,dm-spl;
+
+	pmic@8 {
+		u-boot,dm-spl;
+		regulators {
+			u-boot,dm-spl;
+			sw1ab {
+				u-boot,dm-spl;
+			};
+			sw1c {
+				u-boot,dm-spl;
+			};
+
+			sw2 {
+				u-boot,dm-spl;
+			};
+
+			sw3ab {
+				u-boot,dm-spl;
+			};
+
+			sw4_reg: sw4 {
+				u-boot,dm-spl;
+			};
+
+			swbst {
+				u-boot,dm-spl;
+			};
+
+			vsnvs {
+				u-boot,dm-spl;
+			};
+
+			vrefddr {
+				u-boot,dm-spl;
+			};
+
+			vgen1 {
+				u-boot,dm-spl;
+			};
+
+			vgen2 {
+				u-boot,dm-spl;
+			};
+
+			vgen3 {
+				u-boot,dm-spl;
+			};
+
+			vgen4 {
+				u-boot,dm-spl;
+			};
+
+			vgen5 {
+				u-boot,dm-spl;
+			};
+
+			vgen6 {
+				u-boot,dm-spl;
+			};
+		};
+	};
+};
+
+&iomuxc {
+	u-boot,dm-spl;
+};
+
+
+&reg_usdhc2_vmmc {
+	u-boot,dm-spl;
+};
+
+&pinctrl_reg_usdhc2 {
+	u-boot,dm-spl;
+};
+
+&gpio2 {
+	u-boot,dm-spl;
+};
+
+&uart3 {
+	u-boot,dm-spl;
+};
+
 &usdhc1 {
 	mmc-hs400-1_8v;
+	u-boot,dm-spl;
 };
 
 &usdhc2 {
 	sd-uhs-sdr104;
 	sd-uhs-ddr50;
+	u-boot,dm-spl;
 };

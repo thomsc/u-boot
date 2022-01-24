@@ -26,6 +26,7 @@ extern struct dram_timing_info dram_timing_4gb;
 
 DECLARE_GLOBAL_DATA_PTR;
 
+#if 0
 int pfuze_mode_init(struct pmic *p, u32 mode)
 {
 	unsigned char offset, i, switch_num;
@@ -63,6 +64,7 @@ int pfuze_mode_init(struct pmic *p, u32 mode)
 
 	return ret;
 }
+#endif
 
 static void spl_dram_init(void)
 {
@@ -124,6 +126,7 @@ int board_mmc_getcd(struct mmc *mmc)
 	return ret;
 }
 
+#if 0
 #define USDHC_PAD_CTRL	(PAD_CTL_DSE6 | PAD_CTL_HYS | PAD_CTL_PUE | \
 			 PAD_CTL_FSEL2)
 #define USDHC_GPIO_PAD_CTRL (PAD_CTL_PUE | PAD_CTL_DSE1)
@@ -202,6 +205,7 @@ int board_mmc_init(struct bd_info *bis)
 
 	return 0;
 }
+#endif
 
 #if CONFIG_IS_ENABLED(POWER_LEGACY)
 #define I2C_PMIC	0
@@ -271,7 +275,7 @@ void board_init_f(ulong dummy)
 
 	setup_i2c(0, 100000, 0x7f, &i2c_pad_info1);
 
-	power_init_board();
+//	power_init_board();
 
 	spl_dram_init();
 
